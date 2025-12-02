@@ -1,3 +1,5 @@
+**VARIABLES IN TERRAFORM**   
+---
 **What is a Variable ?**
 
 A variable in Terraform is **simply a placeholder** for a value — like a **reusable input** that you can change without editing your Terraform code.
