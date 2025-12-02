@@ -31,6 +31,7 @@ All other definitionfiles should be passed along like below
 ```hcl
 terraform plan -var-file 'dev_env.tfvars'
 ```
+--
 ✔ Use a default file like `terraform.tfvars` or any `*.auto.tfvars`:Terraform will look for these automatically.
 ```hcl
 terraform plan
