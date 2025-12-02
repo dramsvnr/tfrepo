@@ -1,14 +1,16 @@
 **Terraform Variable Assignment Methods**
 
+---
+
 **Method 1 — Empty Variable Block (Interactive Input)**
 
 When a variable block has **no default value**, Terraform will **prompt for input**.
 
 ✔ Initialize Terraform:  
-```hcl 
-terraform init 
+```hcl
+terraform init
 ```
-✔ Run a plan — it will prompt for values
+✔ Run a plan — it will prompt for values:
 ```hcl
 terraform plan
 ```
@@ -18,54 +20,89 @@ terraform plan
 terraform apply
 ```
 
-**📌 Conclusion**
+**📌 Conclusion**  
 **If a variable block has no default value, Terraform runs in interactive mode asking for inputs.**
 
-Method 2 — Passing Variables via CLI
-You can pass values directly using the -var flag:
+---
 
-bash
-Copy code
+**Method 2 — Passing Variables via CLI**
+
+You can pass values directly at the command line with the `-var` flag.
+
+✔ Run a plan with CLI variables — pass the values directly:
+```hcl
 terraform plan -var "rgname=techlines-dev-rg" -var "rglocation=centralUS"
+```
+
+✔ Apply with CLI variables:
+```hcl
 terraform apply -var "rgname=techlines-dev-rg" -var "rglocation=centralUS"
+```
+
+✔ Destroy with CLI variables:
+```hcl
 terraform destroy -var "rgname=techlines-dev-rg" -var "rglocation=centralUS"
-Method 3 — Variable Definition Files
-Terraform automatically loads the following files:
+```
 
-✔ terraform.tfvars
-✔ terraform.tfvars.json
-✔ *.auto.tfvars
-✔ *.auto.tfvars.json
+**📌 Conclusion**  
+**If you specify variables with `-var` on the command line, Terraform uses these values instead of prompting for input.**
 
-Other .tfvars files must be passed manually:
+---
 
-bash
-Copy code
+**Method 3 — Variable Definition Files**
+
+Terraform can load variable values from special files.
+
+✔ Use a default file like `terraform.tfvars` or any `*.auto.tfvars`:
+```hcl
+terraform plan
+terraform apply
+```
+Terraform will look for these automatically.
+
+✔ Use a custom `.tfvars` file — specify with `-var-file`:
+```hcl
 terraform plan -var-file="dev_env.tfvars"
 terraform apply -var-file="dev_env.tfvars"
 terraform destroy -var-file="dev_env.tfvars"
-Method 4 — Environment Variables
-Terraform reads variables exported with the prefix TF_VAR_.
+```
 
-Example
-PowerShell:
-bash
-Copy code
+**📌 Conclusion**  
+**If you provide a `.tfvars` file or use a default variable definition file, Terraform uses values from those files without prompting.**
+
+---
+
+**Method 4 — Environment Variables**
+
+Terraform can also read variables from your environment.
+
+✔ Export variable(s) using the `TF_VAR_` prefix:
+
+**Bash/macOS/Linux:**
+```sh
+export TF_VAR_rglocation="centralus"
+export TF_VAR_rgname="techlines-dev-rg"
+```
+
+**PowerShell:**
+```powershell
 $env:TF_VAR_rgname="techlines-dev-rg"
 $env:TF_VAR_rglocation="centralus"
-Bash/macOS/Linux:
-bash
-Copy code
-export TF_VAR_rglocation="centralus"
-Now run:
+```
 
-bash
-Copy code
+Then run Terraform as usual:
+```hcl
 terraform plan
 terraform apply
-Variable Definition Precedence (Highest → Lowest)
-1️⃣ -var or -var-file
-2️⃣ *.auto.tfvars
-3️⃣ terraform.tfvars
-4️⃣ Environment variables (export / $env:)
+```
 
+**📌 Conclusion**  
+**If you set environment variables prefixed with `TF_VAR_`, Terraform uses these for variable values and does not prompt for input.**
+
+---
+
+**💡 Variable Definition Precedence (Highest → Lowest)**
+1. `-var` or `-var-file` (CLI)
+2. `*.auto.tfvars`
+3. `terraform.tfvars`
+4. Environment variables (`TF_VAR_...`)
