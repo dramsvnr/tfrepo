@@ -4,7 +4,7 @@
 
 ---
 **1. String Variable**
- — Azure Region Example**
+   — Azure Region Example
  ```hcl
 variable "azure_region" {
   description = "Azure region to deploy resources in"
