@@ -1,17 +1,22 @@
 **Terraform Variable Types with Azure Examples**
+**1. String Variable**
 
-**1. String Variable — Azure Region Example**
 
-✔ Holds plain text values like names, IDs, or paths  
-✔ Use when input must be a single text value  
-✔ Example: `"eastus"`, `"my-vm-name"`  
-```hcl
+---
+**1. String Variable**
+ — Azure Region Example**
+ ```hcl
 variable "azure_region" {
   description = "Azure region to deploy resources in"
   type        = string
   default     = "eastus"
 }
 ```
+
+✔ Holds plain text values like names, IDs, or paths  
+✔ Use when input must be a single text value  
+
+
 
 **2. Number Variable — Azure VM Count Example**
 
