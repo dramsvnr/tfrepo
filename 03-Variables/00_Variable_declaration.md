@@ -4,19 +4,22 @@
 
 When a variable block has **no default value**, Terraform will **prompt for input**.
 
-Steps
-
 ✔ Initialize Terraform:  
-```hcl terraform init ```
-✔ Run a plan — it will prompt for values:
-```terraform plan
-✔ Try apply — again Terraform will ask for values:
+```hcl 
+terraform init 
+```
+✔ Run a plan — it will prompt for values
+```hcl
+terraform plan
+```
 
-bash
-Copy code
+✔ Try apply — again Terraform will ask for values:
+```hcl
 terraform apply
-📌 Conclusion
-If a variable block has no default value, Terraform runs in interactive mode asking for inputs.
+```
+
+**📌 Conclusion**
+**If a variable block has no default value, Terraform runs in interactive mode asking for inputs.**
 
 Method 2 — Passing Variables via CLI
 You can pass values directly using the -var flag:
