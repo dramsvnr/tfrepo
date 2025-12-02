@@ -21,14 +21,16 @@ terraform destroy -var "rgname=techlines-dev-rg" -var "rglocation=centralUS"
 
 **Method 2 — Variable Definition Files**
 
-Terraform can load variable values from special files.
 These variable definition files are auto loaded
- terraform.tfvars
- terraform.tfvars.json
- *.auto.tfvars
- *.auto.tfvars.json
-all other definitionfiles should be passed along like below
+ - terraform.tfvars
+ - terraform.tfvars.json
+ - *.auto.tfvars
+ - *.auto.tfvars.json
+
+All other definitionfiles should be passed along like below
+```hcl
 terraform plan -var-file 'dev_env.tfvars'
+```
 ✔ Use a default file like `terraform.tfvars` or any `*.auto.tfvars`:Terraform will look for these automatically.
 ```hcl
 terraform plan
