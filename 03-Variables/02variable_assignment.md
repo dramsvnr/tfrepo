@@ -20,13 +20,21 @@ terraform destroy -var "rgname=techlines-dev-rg" -var "rglocation=centralUS"
 
 
 **Method 2 — Variable Definition Files**
+
 Terraform can load variable values from special files.
-✔ Use a default file like `terraform.tfvars` or any `*.auto.tfvars`:
+#These variable definition files are auto loaded
+## terraform.tfvars
+## terraform.tfvars.json
+## *.auto.tfvars
+## *.auto.tfvars.json
+# all other definitionfiles should be passed along like below
+terraform plan -var-file 'dev_env.tfvars'
+✔ Use a default file like `terraform.tfvars` or any `*.auto.tfvars`:Terraform will look for these automatically.
 ```hcl
 terraform plan
 terraform apply
 ```
-Terraform will look for these automatically.
+
 ✔ Use a custom `.tfvars` file — specify with `-var-file`:
 ```hcl
 terraform plan -var-file="dev_env.tfvars"
@@ -38,7 +46,9 @@ terraform destroy -var-file="dev_env.tfvars"
 
 
 **Method 3 — Environment Variables**
+
 Terraform can also read variables from your environment.
+
 ✔ Export variable(s) using the `TF_VAR_` prefix:
 **Bash/macOS/Linux:**
 ```sh
@@ -62,7 +72,7 @@ terraform apply
 
 **💡 Variable Definition Precedence (Highest → Lowest)**
 1. `-var` or `-var-file` (CLI)
-2. ny *.auto.tfvars or *.auto.tfvars.json files in lexical order
+2. any *.auto.tfvars or *.auto.tfvars.json files in lexical order
 3. The terraform.tfvars.json file
 4. The terraform.tfvars file
 5. Environment variables
