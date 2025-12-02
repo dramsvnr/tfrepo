@@ -2,9 +2,9 @@
 
 **1. String Variable — Azure Region Example**
 
-✔ Holds plain text values like names, IDs, or paths
-✔ Use when input must be a single text value
-✔ Example: "eastus", "my-vm-name"
+✔ Holds plain text values like names, IDs, or paths  
+✔ Use when input must be a single text value  
+✔ Example: "eastus", "my-vm-name"  
 ```hcl
 variable "vm_count" {
   description = "Number of Azure VMs to deploy"
