@@ -11,8 +11,6 @@ Terraform supports these variable types
 8. Tuple  
 9. Any  
 
-
-
 ---
 **1. String Variable**
    
@@ -26,6 +24,7 @@ variable "azure_region" {
 ```
 ✔ Holds plain text values like names, IDs, or paths  
 ✔ Use when input must be a single text value  
+
 
 **2. Number Variable**
 
@@ -41,6 +40,7 @@ variable "vm_count" {
 ✔ Useful for counts, sizes, thresholds, ports  
 ✔ Example: `3`, `8080`, `1.5`  
 
+
 **3. Boolean Variable**
 
 — Enable Azure Diagnostics
@@ -54,6 +54,7 @@ variable "enable_diagnostics" {
 ✔ Holds `true` or `false`  
 ✔ Used for feature flags or conditional logic  
 ✔ Example: `true` to enable logging 
+
 
 **4. List Variable**
 
@@ -73,19 +74,22 @@ variable "subnet_names" {
 ✔ Used when multiple items are expected in sequence  
 ✔ Example: `["eastus", "westus"]`  
 
+
 **4.1 Set Variable**
 
  — Unique Azure Tags
-✔ Similar to list but unordered  
-✔ Does not allow duplicate values  
-✔ Good for unique tag collections  
-✔ Example: `["dev", "backend", "dev"]` (duplicate automatically removed)  
+
 ```hcl
 variable "env_tags" {
   type    = set(string)
   default = ["dev", "backend", "dev"]
 }
 ```
+✔ Similar to list but unordered  
+✔ Does not allow duplicate values  
+✔ Good for unique tag collections  
+✔ Example: `["dev", "backend", "dev"]` (duplicate automatically removed)  
+
 
 **5. Map Variable**
 
@@ -104,6 +108,7 @@ variable "resource_tags" {
 ✔ Key-value dictionary  
 ✔ Useful for central tag input or structured settings  
 ✔ Example: `{ environment = "dev", project = "billing-app", owner = "cloud-team" }`  
+
 
 **6. Object Variable**
 
@@ -127,6 +132,7 @@ variable "storage_config" {
 ✔ Ideal for complex structured configurations  
 ✔ Example: `{ account_tier = "Standard", account_replication_type = "LRS", enable_https_traffic = true }`  
 
+
 **7. Tuple Variable**
 
 — Mixed Azure Inputs
@@ -141,6 +147,7 @@ variable "mixed_values" {
 ✔ Fixed-length ordered values  
 ✔ Each position can have a different type  
 ✔ Example: `["Basic", "Standard_B2ms", 3]`  
+
 
 **8. Any Type**
 
