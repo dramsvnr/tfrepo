@@ -36,4 +36,25 @@ variable "<LABEL>" {
 | `nullable` | Whether variable value can be `null`. | Boolean | Optional |
 | `ephemeral` | Prevent storing this value in state or plan files. | Boolean | Optional |
 
+---
 
+**Method 1 — Empty Variable Block (Interactive Input)**
+
+When a variable block has **no default value**, Terraform will **prompt for input**.
+
+✔ Initialize Terraform:  
+```hcl
+terraform init
+```
+✔ Run a plan — it will prompt for values:
+```hcl
+terraform plan
+```
+
+✔ Try apply — again Terraform will ask for values:
+```hcl
+terraform apply
+```
+
+**📌 Conclusion**  
+**If a variable block has no default value, Terraform runs in interactive mode asking for inputs.**
