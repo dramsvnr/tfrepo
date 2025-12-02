@@ -1,15 +1,17 @@
-Terraform Variable Types with Azure Examples
+**Terraform Variable Types with Azure Examples**
+
 1. String Variable — Azure Region Example
 
 ✔ Holds plain text values like names, IDs, or paths
 ✔ Use when input must be a single text value
 ✔ Example: "eastus", "my-vm-name"
 
-variable "location" {
-  description = "Azure region for deployment"
-  type        = string
-  default     = "eastus"
+variable "vm_count" {
+  description = "Number of Azure VMs to deploy"
+  type        = number
+  default     = 2
 }
+
 
 2. Number Variable — Azure VM Count Example
 
