@@ -103,6 +103,8 @@ terraform apply
 
 **💡 Variable Definition Precedence (Highest → Lowest)**
 1. `-var` or `-var-file` (CLI)
-2. `*.auto.tfvars`
-3. `terraform.tfvars`
-4. Environment variables (`TF_VAR_...`)
+2. ny *.auto.tfvars or *.auto.tfvars.json files in lexical order
+3. The terraform.tfvars.json file
+4. The terraform.tfvars file
+5. Environment variables
+6. The default argument of the variable block
