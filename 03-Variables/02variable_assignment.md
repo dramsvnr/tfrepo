@@ -1,10 +1,6 @@
 **Terraform Variable Assignment Methods**
 
 ---
-
-
----
-
 **Method 1 — Passing Variables via CLI**
 You can pass values directly at the command line with the `-var` flag.
 ✔ Run a plan with CLI variables — pass the values directly:

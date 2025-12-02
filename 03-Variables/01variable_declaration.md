@@ -38,10 +38,9 @@ variable "<LABEL>" {
 
 ---
 
-**Method 1 — Empty Variable Block (Interactive Input)**
+**LAB 1 — Empty Variable Block (Interactive Input)**
 
 When a variable block has **no default value**, Terraform will **prompt for input**.
-
 ✔ Initialize Terraform:  
 ```hcl
 terraform init
@@ -50,11 +49,9 @@ terraform init
 ```hcl
 terraform plan
 ```
-
 ✔ Try apply — again Terraform will ask for values:
 ```hcl
 terraform apply
 ```
-
 **📌 Conclusion**  
 **If a variable block has no default value, Terraform runs in interactive mode asking for inputs.**
