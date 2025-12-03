@@ -12,9 +12,9 @@ Because Terraform needs to know:
 
 - Think of state like a database or record of your infrastructure.
 - Example : If Terraform creates an Azure resource group, it stores
-    # The name
-    # The ID
-    # The configuration details
+    - The name
+    - The ID
+    - The configuration details
 
 So next time you run terraform plan, it compares:
 ```tf
