@@ -3,8 +3,8 @@
 - Variable declaration
 - Variable assignments
 - Variable Types
-
-**Day4:Topics**
+---
+***Day4:Topics***
 1. outputs
 2. locals
 
