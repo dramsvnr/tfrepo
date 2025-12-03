@@ -33,3 +33,6 @@ terraform.exe
 # OS junk files
 .DS_Store
 Thumbs.db
+
+#provider azure connection strings
+providers.tf

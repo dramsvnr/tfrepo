@@ -2,7 +2,7 @@
 variable "rgname" {
     description = "value of RG Name"
     type =  string
-    default = "techlines-dev-rg"
+    default = "techlines-dev-rg-201"
   
 }
 

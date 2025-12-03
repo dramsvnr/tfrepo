@@ -3,7 +3,7 @@
 
 #Set an environment variable
 # in PowerShell	we declare like this > $env:TF_VAR_rglocation = "centralus"
-$env:TF_VAR_rgname="techlines-dev-rg"
+$env:TF_VAR_rgname="techlines-dev-rg-204"
 $env:TF_VAR_rglocation="centralus"
 
 
