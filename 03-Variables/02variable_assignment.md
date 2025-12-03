@@ -80,3 +80,5 @@ terraform apply
 4. The terraform.tfvars file
 5. Environment variables
 6. The default argument of the variable block
+
+
