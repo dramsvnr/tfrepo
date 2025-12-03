@@ -73,9 +73,9 @@ terraform apply
 
 ---
 
-**💡 Variable Definition Precedence (Highest → Lowest)**
+**💡 Variable Definition Precedence order (Highest → Lowest)**
 1. `-var` or `-var-file` (CLI)
-2. any *.auto.tfvars or *.auto.tfvars.json files in lexical order
+2. any *.auto.tfvars or *.auto.tfvars.json files in lexical order(dictionary)
 3. The terraform.tfvars.json file
 4. The terraform.tfvars file
 5. Environment variables
