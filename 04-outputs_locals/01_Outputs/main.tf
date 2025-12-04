@@ -13,7 +13,7 @@ resource "azurerm_public_ip" "vm_pip" {
 
 #static output
 output "static_output" {
-  value       = "I am like echo in bash - write-host in powershell - printf in c"
+  value       = "i am the output you want to see"
   description = "This is static output"
 }
 
