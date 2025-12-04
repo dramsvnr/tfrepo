@@ -45,6 +45,11 @@ Benefits:
 - Better security & backups
 - Locking (prevents parallel conflicting changes)
 ---
+***LAB 1***  
+1. Local State
+2. Adding Remote backends
+---
+
 **State Locking**  
 Prevents multiple people from applying changes at the same time,As they could overwrite each other’s changes.
 - Enabled automatically with remote backends (Azure blob, Terraform Cloud)  
@@ -60,25 +65,3 @@ Prevents multiple people from applying changes at the same time,As they could ov
 So Azure Storage uses Blob leasing feature as the lock mechanism.
 
 ---
-**Viewing and Working with State**  
-**Commands:**  
-
-📌 ```terraform state list```
-    Shows all resources Terraform tracks.
-
-📌 ```terraform state show <resource>```
-    Shows detailed state info for a resource.
-
-📌 ```terraform state mv```
-    Moves resources between modules.
-
-📌 ```terraform state rm```
-    Removes an item from state (careful — Terraform will recreate it next apply).
-
----
-
-
-
-
-
-
