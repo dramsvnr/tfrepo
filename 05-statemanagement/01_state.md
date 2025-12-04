@@ -45,6 +45,39 @@ Benefits:
 - Better security & backups
 - Locking (prevents parallel conflicting changes)
 ---
+**State Locking**  
+Prevents multiple people from applying changes at the same time,As they could overwrite each other’s changes.
+- Enabled automatically with remote backends (Azure blob, Terraform Cloud)  
+**How Azure State Locking Works**
+1. Terraform runs apply or plan
+2. It requests a lease lock on the .tfstate file stored in Azure storage
+3. While lease is held:  
+✔️ No one else can modify the state
+✔️ Any second Terraform apply will wait or fail
+4. When operation completes:  
+✔️ Lease is released
+
+So Azure Storage uses Blob leasing feature as the lock mechanism.
+
+---
+**Viewing and Working with State**  
+**Commands:**  
+Commands:
+
+📌 ```terraform state list```
+Shows all resources Terraform tracks.
+
+📌 terraform state show <resource>
+Shows detailed state info for a resource.
+
+📌 terraform state mv
+Moves resources between modules.
+
+📌 terraform state rm
+Removes an item from state (careful — Terraform will recreate it next apply).
+
+
+
 
 
 
