@@ -1,4 +1,5 @@
 **State Management**
+
 ---
 **What is Terraform State Management?**
 - Terraform state management refers to how Terraform keeps track of the real-world cloud resources it creates.
@@ -23,4 +24,26 @@ vs
 ➡ .tfstate file (current state)
 ```
 Then Terraform decides what changes are needed.
+
+---
+**Where State is Stored**
+1. Local State
+    - Default location: terraform.tfstate
+    - Stored in working directory
+    - Good for learning/testing
+2. Remote State  
+Used when multiple people or automation interact with Terraform.  
+
+Common backends:   
+- Azure Storage Account(Azure)
+- S3 bucket (AWS)
+- GCS bucket (Google Cloud)
+- Terraform Cloud
+Benefits:
+- Collaboration
+- Better security & backups
+- Locking (prevents parallel conflicting changes)
+---
+
+
 
