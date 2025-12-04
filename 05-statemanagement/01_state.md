@@ -38,7 +38,7 @@ Common backends:
 - Azure Storage Account(Azure)
 - S3 bucket (AWS)
 - GCS bucket (Google Cloud)
-- Terraform Cloud
+- Terraform Cloud  
 Benefits:
 - Collaboration
 - Better security & backups
