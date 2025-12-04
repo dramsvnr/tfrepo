@@ -39,6 +39,7 @@ Common backends:
 - S3 bucket (AWS)
 - GCS bucket (Google Cloud)
 - Terraform Cloud  
+
 Benefits:
 - Collaboration
 - Better security & backups
