@@ -1,0 +1,11 @@
+---
+Need to add content 
+- Terraform import
+- Terraform pull & Terraform push
+- Multiple environment states
+- Using statefile in outputs ex: vnet
+
+==============
+rough
+==============
+1.for state mv 
