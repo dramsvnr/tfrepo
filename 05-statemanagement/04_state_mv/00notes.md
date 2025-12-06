@@ -1,11 +1,12 @@
-
+<pre>
 cd step-a
 terraform init
 terraform apply -auto-approve
 terraform state list    # confirms azurerm_resource_group.app
+</pre>
 ---
 
-#Step C — copy state file and perform the move
+#Step2— copy state file and perform the move
 
 From step-a copy the state to step-b so both share the same terraform.tfstate:
 <pre>
