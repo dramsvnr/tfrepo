@@ -10,7 +10,7 @@ Expected Azure Resources Created:
 ✔ Resource Group  
 ✔ Storage Account  
 
-**step3:Verify Resources in Terraform State**
+**step3:Verify Resources in Terraform State**  
 ```terraform state list```  
 
 expected
@@ -33,7 +33,8 @@ Important: The storage account still exists in Azure — only Terraform's tracki
 ```terraform plan```  
 Expected result:   
 Terraform thinks the storage account does not exist, so it will try to create a NEW storage account:  
-```+ azurerm_storage_account.sa will be created  
+```
++ azurerm_storage_account.sa will be created  
 ```
 Notes :  
 - Terraform relies 100% on state to know what already exists.  
