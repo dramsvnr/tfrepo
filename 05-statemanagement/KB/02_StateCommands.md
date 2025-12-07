@@ -26,9 +26,13 @@
         - Old address is removed.
         - New address is added with exact same attributes.
     3. Because Azure is untouched, no recreation happens if addresses match config.
+-  link: https://developer.hashicorp.com/terraform/cli/commands/state/mv
 
 4. ```terraform state rm```
-    Removes an item from state (careful — Terraform will recreate it next apply).
+    - Removes an item from state (careful — Terraform will recreate it next apply).
+    - Update your config files once the resource is removed from state file to avoid recreating
+    - Terraform will search the state for any instances matching the given resource address, and remove the record of each one so that Terraform will no longer be tracking the corresponding remote objects.
+    - 
 
 ---
 ***LAB 2***  
