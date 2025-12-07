@@ -45,7 +45,8 @@ Notes :
 Terraform tries to create the storage account, but:  
 - If the name is globally unique, apply succeeds AND a second storage account is created.  
 - If the name already exists (Azure global naming conflict), apply fails with:  
-```A storage account named <name> already exists.  
+```
+A storage account named <name> already exists.  
 ```
 
 Notes :   
@@ -68,7 +69,7 @@ az storage account show \
 ```terraform plan```  
 
 ---
-**SUMMARY**
+**SUMMARY**   
 ✔ terraform state rm  
 Removes resource only from Terraform state, not from Azure.  
 Terraform loses memory of that resource.  
