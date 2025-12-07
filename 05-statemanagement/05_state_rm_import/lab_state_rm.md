@@ -33,9 +33,7 @@ Important: The storage account still exists in Azure — only Terraform's tracki
 ```terraform plan```  
 Expected result:   
 Terraform thinks the storage account does not exist, so it will try to create a NEW storage account:  
-```
-+ azurerm_storage_account.sa will be created  
-```
+```+ azurerm_storage_account.sa will be created```  
 Notes :  
 - Terraform relies 100% on state to know what already exists.  
 - Since the SA is removed from state, Terraform thinks it must create it again.  
@@ -45,9 +43,7 @@ Notes :
 Terraform tries to create the storage account, but:  
 - If the name is globally unique, apply succeeds AND a second storage account is created.  
 - If the name already exists (Azure global naming conflict), apply fails with:  
-```
-A storage account named <name> already exists.  
-```
+```A storage account named <name> already exists```  
 
 Notes :   
 - Because we removed it from Terraform state, Terraform does not know it already exists → conflict error.  
