@@ -1,4 +1,5 @@
-Step1: ```cd tfrepo/05-statemanagement/05_state_rm```
+Step1: ```cd tfrepo/05-statemanagement/05_state_rm```  
+
 step2: 
 <pre>
 terraform init
