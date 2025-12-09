@@ -47,7 +47,8 @@ terraform workspace show
 5. Delete a workspace    
 ```
 terraform workspace delete dev
-```      
-⚠️ Workspace must be empty (destroy infra before deleting).  
+```    
+⚠️ Workspace must be empty (destroy infra before deleting).
+
 ---
 
