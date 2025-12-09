@@ -8,15 +8,15 @@
 **Important Points to Remember**  
 
 **1. Default Workspace Exists**    
-    - Every Terraform project starts with a workspace named default.
-**2. Each Workspace Has Its Own State**
-    - Workspaces = isolated state files.
-    - Resources created in each workspace are independent.
-**3. Same Code, Different Values**
-    - You can use variables with workspace name: ```environment = terraform.workspace```
-**4. Workspaces Are NOT for Everything**
-    - Workspaces are good for small-medium scale environments.
-    - For large orgs → Use separate folders + pipelines, not workspaces.
+    - Every Terraform project starts with a workspace named default.  
+**2. Each Workspace Has Its Own State**  
+    - Workspaces = isolated state files.  
+    - Resources created in each workspace are independent.  
+**3. Same Code, Different Values**  
+    - You can use variables with workspace name: ```environment = terraform.workspace```  
+**4. Workspaces Are NOT for Everything**  
+    - Workspaces are good for small-medium scale environments.  
+    - For large orgs → Use separate folders + pipelines, not workspaces.  
 ---
 
 **Terraform Workspace Commands**   
@@ -48,6 +48,6 @@ terraform workspace show
 ```
 terraform workspace delete dev
 ```      
-⚠️ Workspace must be empty (destroy infra before deleting).    
+⚠️ Workspace must be empty (destroy infra before deleting).  
 ---
 
