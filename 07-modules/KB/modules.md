@@ -85,7 +85,7 @@ version = "5.0.0"
 </pre>
 
 ---
-**9. Best Practices (Student + Interview Level)**  
+**9. Best Practices**  
 
 - Keep modules small and focused (one purpose per module).  
 - Use meaningful variable names.  
