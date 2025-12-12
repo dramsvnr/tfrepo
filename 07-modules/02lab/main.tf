@@ -1,6 +1,6 @@
 module "rg" {
   source  = "terraform-az-modules/resource-group/azure"
   version = "1.0.1"  
-  name    = "registry-tf-rg"
+  custom_name    = "registry"
   location= "East US"
 }

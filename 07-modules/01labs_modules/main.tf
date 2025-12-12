@@ -1,6 +1,17 @@
 
-# Create a resource group
-resource "azurerm_resource_group" "r-app-rg" {
-  name     = "${var.prefix}-${var.rgname}"
-  location = var.rglocation
+module "devrgmodule" {
+  source = "./modules/ResourceGroups"
+  rgname = "techlines-rg"
+  rglocation = "CentralUS"
+  prefix = "dev"
 }
+output "rgid" {
+  value = module.devrgmodule.rgid
+}
+
+# module "uatrgmodule" {
+#   source = "./modules/ResourceGroups"
+#   rgname = "techlines-rg"
+#   rglocation = "CentralUS"
+#   prefix = "uat"
+# }
