@@ -84,7 +84,8 @@ resource "null_resource" "deployment_prep" {
   triggers = {
     always_run = timestamp()
   }
-
+ ## Declaring local Provisioner
+ ## It creates a log file with deployment timestamp
   provisioner "local-exec" {
     command = "echo 'Deployment started at ${timestamp()}' > deployment-${timestamp()}.log"
 
@@ -123,6 +124,11 @@ resource "azurerm_linux_virtual_machine" "demo_vm" {
     username   = "azureuser"
     public_key = file("~/.ssh/id_rsa.pub")
   }
+##declaring remote Provisioners
+##Connects to server
+##Installs Nginix after vm is created
+##Hosts webpage creating index.html
+## starts and enables nginix
 
   provisioner "remote-exec" {
     inline = [   
@@ -144,6 +150,9 @@ resource "azurerm_linux_virtual_machine" "demo_vm" {
       }
     
   }
+##declaring file Provisioners
+##Connects to server
+##copies configuration files
 
   provisioner "file" {
     source = "configs/devapp.conf"
