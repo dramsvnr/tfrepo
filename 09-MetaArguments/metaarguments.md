@@ -99,3 +99,49 @@ Prefer for_each over count in real projects.
 
 ---
 
+3. ``depends_on`` Meta-Argument
+
+**What is depends_on?** 
+Forces Terraform to create or destroy resources in a specific order.  
+
+**Why Needed?**  
+Terraform usually detects dependencies automatically, but not always.  
+
+Azure Example:
+<pre>
+resource "azurerm_storage_account" "sa" {
+  name                     = "dependssa123"
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = azurerm_resource_group.rg.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+
+  depends_on = [
+    azurerm_resource_group.rg
+  ]
+}
+</pre>
+
+**Common Use Cases**
+
+- Role assignments    
+- Policy assignments    
+- Provisioners  
+- Module dependencies  
+---
+
+- count → numeric, simple, risky  
+- for_each → key-based, safe, preferred  
+- depends_on → explicit ordering  
+- Best practice → use for_each in production  
+---
+**Summary**  
+
+- Meta-arguments control how Terraform behaves  
+- count and for_each manage resource quantity  
+- depends_on manages order  
+- Choosing the right meta-argument prevents state issues  
+---
+
+
+
