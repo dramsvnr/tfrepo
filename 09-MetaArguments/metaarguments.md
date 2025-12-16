@@ -79,7 +79,8 @@ resource "TYPE" "NAME" {
 - each.value → resource value  
 
 Resources are addressed as:  
-``azurerm_resource_group.rg["dev"] ``
+``azurerm_resource_group.rg["dev"] ``  
+
 ---
 **When to Use**
 - Environment-based resources
@@ -87,7 +88,8 @@ Resources are addressed as:
 - When resources must not shift
  
 **Best Practice**  
-Prefer for_each over count in real projects.   
+Prefer for_each over count in real projects.  
+
 ---
 **count vs for_each**  
 | Feature          | count      | for_each |
@@ -101,7 +103,7 @@ Prefer for_each over count in real projects.
 
 3. ``depends_on`` Meta-Argument
 
-**What is depends_on?** 
+**What is depends_on?**  
 Forces Terraform to create or destroy resources in a specific order.  
 
 **Why Needed?**  
