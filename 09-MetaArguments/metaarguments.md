@@ -65,7 +65,7 @@ azurerm_resource_group.rg[0]
 
 **2.`for_each` Meta-Argument**  
 
-**What is for_each?**
+**What is for_each?**  
 for_each creates resources using keys **from a map or set**, making it safer and predictable.
 
 SYNTAX
@@ -77,6 +77,7 @@ resource "TYPE" "NAME" {
 
 - each.key → resource identifier  
 - each.value → resource value  
+
 Resources are addressed as:  
 ``azurerm_resource_group.rg["dev"] ``
 ---
@@ -86,7 +87,7 @@ Resources are addressed as:
 - When resources must not shift
  
 **Best Practice**  
-Prefer for_each over count in real projects.  
+Prefer for_each over count in real projects.   
 ---
 **count vs for_each**  
 | Feature          | count      | for_each |
