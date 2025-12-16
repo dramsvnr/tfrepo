@@ -156,7 +156,7 @@ resource "azurerm_linux_virtual_machine" "demo_vm" {
 
   provisioner "file" {
     source = "configs/devapp.conf"
-    destination = "/home/azureuser/devapp.conf"
+    destination = "cd /home/azureuser/devapp.conf"
 
     connection {
         type = "ssh"
