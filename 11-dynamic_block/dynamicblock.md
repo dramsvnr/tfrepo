@@ -51,4 +51,38 @@ dynamic "<BLOCK_NAME>" {
 | content    | Actual configuration                            |
 
 ---
+**Compare Static vs Dynamic**  
+
+❌ Static (Bad for scale)  
+<pre>
+security_rule {
+  name = "AllowSSH"
+  ...
+}
+
+security_rule {
+  name = "AllowHTTP"
+  ...
+}
+</pre>
+
+✅ Dynamic (Best Practice)
+<pre>
+dynamic "security_rule" {
+  for_each = var.security_rules
+  content { ... }
+}
+</pre>
+
+
+---
+
+**Common Mistakes**
+
+| Mistake                      | Explanation                                            |
+| ---------------------------- | ------------------------------------------------------ |
+| Using dynamic for resources  | Dynamic blocks only work inside resources              |
+| Wrong block name             | Must match provider nested block name                  |
+| Confusing count with dynamic | count creates resources, dynamic creates nested blocks |
+
 ---
