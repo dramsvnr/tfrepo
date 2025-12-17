@@ -101,4 +101,23 @@ resource "azurerm_storage_account" "sa" {
 
 Terraform will not detect drift for ignored attributes.
 
+**Ignore All Changes (Use Carefully)**
+
+<pre>
+lifecycle {
+  ignore_changes = all
+}
+</pre>
+
+Terraform will stop managing updates for this resource.  
+This should be used **only in rare and controlled scenarios**.
+
+---
+
+**Best Practices**
+
+- Use prevent_destroy for production Resource Groups  
+- Use create_before_destroy to avoid downtime  
+- Use ignore_changes for tags and autoscaling  
+- Avoid ignore_changes = all in production  
 ---
