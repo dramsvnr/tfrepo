@@ -24,7 +24,8 @@ lifecycle {
 
 ---
 
-1. create_before_destroy  
+**1. create_before_destroy**  
+
 Purpose : Ensures new resource is created first, then old one is destroyed.  
 Why Needed? : Avoids service downtime (important for VMs, Load Balancers, App Services).  
 Azure Example :  
@@ -39,19 +40,19 @@ resource "azurerm_virtual_machine" "vm" {
 </pre>
 
 Terraform flow:  
+
 **Create new VM → Switch to New VM → Destroy old VM**  
+
 ---  
 **2. prevent_destroy**  
-Purpose
-Prevents Terraform from destroying a resource, even if:
-terraform destroy is executed
+**Purpose:** Prevents Terraform from destroying a resource, even if terraform destroy is executed.  
 The resource is removed from Terraform configuration
 
-**Common Use Cases**
-Resource Groups
-Databases
-Storage Accounts
-Production Virtual Machines
+**Common Use Cases**  
+Resource Groups  
+Databases  
+Storage Accounts  
+Production Virtual Machines  
 
 **Azure Example**
 <pre>
@@ -67,7 +68,7 @@ resource "azurerm_resource_group" "rg" {
 
 **Result**
 Terraform fails with an error:
-Error: Instance cannot be destroyed
+``Error: Instance cannot be destroyed``
 
 ---
 
@@ -75,15 +76,15 @@ Error: Instance cannot be destroyed
 
 **Purpose**
 
-Instructs Terraform to ignore changes to specific resource attributes during plan and apply.
+Instructs Terraform to *ignore changes to specific resource attributes* during *plan* and *apply*.
 
 **When to Use**
 
-Tags modified manually
-Autoscaling updates resource attributes
-Azure manages or updates fields automatically
+- Tags modified manually  
+- Autoscaling updates resource attributes  
+- Azure manages or updates fields automatically  
 
-**Azure Example (Ignore Tags)**
+**Azure Example (Ignore Tags)**  
 <pre>
 resource "azurerm_storage_account" "sa" {
   name                     = "tfstoragedemo"
