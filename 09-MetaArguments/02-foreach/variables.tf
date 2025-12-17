@@ -6,3 +6,5 @@ variable "resource_groups" {
     prod = "Central US"
   }
 }
+
+
