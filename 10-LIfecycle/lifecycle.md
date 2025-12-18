@@ -46,7 +46,6 @@ Terraform flow:
 ---  
 **2. prevent_destroy**  
 **Purpose:** Prevents Terraform from destroying a resource, even if terraform destroy is executed.  
-The resource is removed from Terraform configuration
 
 **Common Use Cases**  
 Resource Groups  
